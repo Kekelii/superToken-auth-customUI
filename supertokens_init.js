@@ -82,7 +82,7 @@ supertokens.init({
                                 let formFields = input.formFields;
                                 let sanitizedUserData = await userSanitizer(formFields);
                                 let client = await MongoClient()
-                                const database = client.db('kekeli_base_clients');
+                                const database = client.db('databaseName');
                                 const users = database.collection('users');
                                 await users.insertOne(sanitizedUserData);
 
