@@ -14,3 +14,10 @@
 
 ## To run code 
  `npm start` to start the application
+
+
+## Give me a star 
+    if you like my work give me star , can really help my career
+    if you have any recomendation connect with me on 
+    
+    Discord: https://discord.com/users/721755201437958154
