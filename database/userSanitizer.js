@@ -3,17 +3,20 @@ import bycript from 'bcrypt'
 
 
 let salt = 10;
-export default async function(values) {
+export default async function tst(values) {
     let userdata = {};
-    values.forEach((feild) => {
-        if (feild.id == 'password') {
-            userdata[feild.id] = bycript.hashSync(feild.value, salt);
-            return
-        }
-        userdata[feild.id] = feild.value
+    await new Promise(resolve => {
+        values.forEach(async(feild) => {
+            if (feild.id == 'password') {
+                userdata[feild.id] = await bycript.hash(feild.value, salt);
+                resolve()
+            } else {
+                userdata[feild.id] = feild.value
+
+            }
+        })
     })
 
-    console.log(userdata)
     return userdata;
 
 }
